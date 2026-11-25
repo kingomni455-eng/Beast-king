@@ -1,0 +1,32 @@
+# Expect Minecraft — Bedrock Behavior Pack
+
+## Install
+1. Zip this folder and rename to `.mcpack`, OR drag the `.mcpack` into
+   Minecraft — the pack appears under **Behavior Packs** when editing a world.
+2. Enable it. For older versions (< 1.21) you may also need to toggle
+   **"Beta APIs"** under Experimental Features.
+3. Add a `pack_icon.png` (128×128) if you want a custom icon in the UI.
+
+## Commands
+| Command | Description |
+|---|---|
+| `!help` | list all commands |
+| `!spawn` | teleport to the world spawn |
+| `!sethome` | save current position as home |
+| `!home` | teleport to your saved home |
+| `!heal` | restore health + hunger (admins) |
+| `!gm <s\|c\|a\|sp>` | switch gamemode (admins) |
+| `!stats` | show your stats |
+
+## Making yourself admin
+In-game, type: `/tag @s add admin`
+
+## Compass shortcut
+Right-clicking a compass teleports you to your saved home — a nice
+HUD-free utility item driven entirely by script.
+
+## Extending
+- Add new commands to the `COMMANDS` object in `scripts/main.js`.
+- Follow the pattern: `name(player, args) { ... }`.
+- Persistent state uses `player.setDynamicProperty(key, value)`
+  (strings/numbers/booleans only — serialize objects with `JSON.stringify`).
